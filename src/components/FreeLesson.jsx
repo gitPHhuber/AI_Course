@@ -1,18 +1,8 @@
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 import { Clock, Film, Eye } from 'lucide-react'
 
-const POSTER = 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&q=80&auto=format&fit=crop'
-const VIDEO_SRC = '/videos/lesson.mp4'
-
 export default function FreeLesson() {
-  const [playing, setPlaying] = useState(false)
   const [submitted, setSubmitted] = useState(false)
-  const videoRef = useRef(null)
-
-  const play = () => {
-    setPlaying(true)
-    setTimeout(() => videoRef.current?.play(), 0)
-  }
 
   const submit = (e) => {
     e.preventDefault()
@@ -25,37 +15,25 @@ export default function FreeLesson() {
         <div className="section-label">Бесплатно</div>
         <div className="section-title">Попробуйте перед покупкой</div>
         <div className="section-desc">
-          15-минутный пробный урок из модуля «Промпт-инжиниринг». Покажем, как один правильно
-          сформулированный запрос экономит часы работы — на конкретном примере.
+          Первый блок курса — бесплатно. 4 урока из модуля «Промпт-инжиниринг», 50+ готовых
+          промптов и чек-лист по формулировке запросов. Доступ остаётся навсегда.
         </div>
 
         <div className="free-lesson-grid">
           <div>
-            <div className={`video-player${playing ? ' playing' : ''}`}>
-              {!playing && (
-                <>
-                  <div className="poster" style={{ backgroundImage: `url(${POSTER})` }}></div>
-                  <button className="play-btn" onClick={play} aria-label="Запустить пробный урок"></button>
-                </>
-              )}
-              <video
-                ref={videoRef}
-                src={VIDEO_SRC}
-                controls={playing}
-                preload="none"
-                playsInline
-              />
+            <div className="preview-image">
+              <img src="/images/free-lesson-preview.jpg" alt="Превью бесплатного блока курса" loading="lazy" />
             </div>
             <div className="video-meta">
-              <span><Clock size={14} strokeWidth={1.6} /> 14:32</span>
-              <span><Film size={14} strokeWidth={1.6} /> Урок 3 из модуля 03</span>
-              <span><Eye size={14} strokeWidth={1.6} /> Без регистрации</span>
+              <span><Film size={14} strokeWidth={1.6} /> 4 урока</span>
+              <span><Clock size={14} strokeWidth={1.6} /> ~50 минут</span>
+              <span><Eye size={14} strokeWidth={1.6} /> Без оплаты</span>
             </div>
           </div>
 
           <div className="signup-card">
-            <h3>Получить доступ ко всем 4 пробным урокам</h3>
-            <p className="lead">Первый блок курса — бесплатно. Мы пришлём ссылку на почту в течение минуты.</p>
+            <h3>Получить бесплатный блок</h3>
+            <p className="lead">Введите имя и email — пришлём ссылку на доступ в течение минуты.</p>
             <ul>
               <li>4 видеоурока (~50 минут)</li>
               <li>20 готовых промптов в формате PDF</li>

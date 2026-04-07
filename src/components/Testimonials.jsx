@@ -1,19 +1,15 @@
-import { useState } from 'react'
-
-const videoItems = [
+const featured = [
   {
+    photo: '/images/testimonial-sergey.jpg',
     name: 'Сергей Воронцов',
     role: 'Основатель студии дизайна',
-    poster: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80&auto=format&fit=crop',
-    text: '«За месяц после курса автоматизировал генерацию мудбордов и брифов. Освободил два дня в неделю — занимаюсь стратегией, а не операционкой.»',
-    video: '/videos/testimonial-1.mp4',
+    text: 'За месяц после курса автоматизировал генерацию мудбордов и брифов для клиентов. Освободил два дня в неделю — занимаюсь стратегией, а не операционкой. Команда сначала боялась ИИ, теперь без него не работают.',
   },
   {
+    photo: '/images/testimonial-marina.jpg',
     name: 'Марина Зайцева',
     role: 'HR-директор · ИТ-компания',
-    poster: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800&q=80&auto=format&fit=crop',
-    text: '«Подключили Claude к процессу скрининга резюме. Команда HR разгрузилась на 60%, мы успеваем закрывать вдвое больше вакансий.»',
-    video: '/videos/testimonial-2.mp4',
+    text: 'Подключили Claude к процессу скрининга резюме. Команда HR разгрузилась на 60%, мы успеваем закрывать вдвое больше вакансий без расширения штата. Авторы курса лично помогли довести интеграцию до прода.',
   },
 ]
 
@@ -39,34 +35,32 @@ const textItems = [
 ]
 
 export default function Testimonials() {
-  const [modalVideo, setModalVideo] = useState(null)
-
   return (
     <section className="testimonials">
       <div className="container">
         <div className="section-label">Отзывы</div>
         <div className="section-title">Что говорят ученики</div>
-        <div className="section-desc">Видеоотзывы и тексты от выпускников курса</div>
-        <div className="testimonials-grid">
-          {videoItems.map((v) => (
-            <div className="testimonial video-testimonial" key={v.name}>
-              <div className="video-thumb" onClick={() => setModalVideo(v.video)}>
-                <img src={v.poster} alt={v.name} loading="lazy" />
-                <div className="play-overlay"></div>
+        <div className="section-desc">Реальные истории выпускников курса</div>
+
+        <div className="featured-testimonials">
+          {featured.map((f) => (
+            <div className="featured-testimonial" key={f.name}>
+              <div className="featured-photo">
+                <img src={f.photo} alt={f.name} loading="lazy" />
               </div>
-              <div className="video-testimonial-body">
+              <div className="featured-body">
                 <div className="testimonial-stars">★★★★★</div>
-                <div className="testimonial-text">{v.text}</div>
-                <div className="testimonial-author">
-                  <div className="testimonial-avatar">{v.name[0]}</div>
-                  <div>
-                    <div className="testimonial-name">{v.name}</div>
-                    <div className="testimonial-role">{v.role}</div>
-                  </div>
+                <p className="featured-text">{f.text}</p>
+                <div className="featured-author">
+                  <div className="testimonial-name">{f.name}</div>
+                  <div className="testimonial-role">{f.role}</div>
                 </div>
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="testimonials-grid">
           {textItems.map((t) => (
             <div className="testimonial" key={t.name}>
               <div className="testimonial-stars">★★★★★</div>
@@ -82,15 +76,6 @@ export default function Testimonials() {
           ))}
         </div>
       </div>
-
-      {modalVideo && (
-        <div className="video-modal" onClick={() => setModalVideo(null)}>
-          <div className="video-modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="video-modal-close" onClick={() => setModalVideo(null)} aria-label="Закрыть">×</button>
-            <video src={modalVideo} controls autoPlay playsInline />
-          </div>
-        </div>
-      )}
     </section>
   )
 }

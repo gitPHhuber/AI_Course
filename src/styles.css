@@ -199,13 +199,10 @@ section{padding:6rem 2rem}
 /* Free Lesson */
 .free-lesson{padding:6rem 2rem;background:linear-gradient(180deg,transparent,rgba(108,92,231,.03),transparent)}
 .free-lesson-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:2.5rem;margin-top:2rem;align-items:start}
-.video-player{position:relative;border-radius:16px;overflow:hidden;background:#000;border:1px solid var(--border);aspect-ratio:16/9}
-.video-player video{width:100%;height:100%;display:block;object-fit:cover}
-.video-player .poster{position:absolute;inset:0;background-size:cover;background-position:center;transition:opacity .3s}
-.video-player .play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:78px;height:78px;border-radius:50%;background:rgba(108,92,231,.95);display:flex;align-items:center;justify-content:center;cursor:pointer;border:none;box-shadow:0 0 40px rgba(108,92,231,.6);transition:all .25s;z-index:2}
-.video-player .play-btn:hover{transform:translate(-50%,-50%) scale(1.08);box-shadow:0 0 60px rgba(108,92,231,.8)}
-.video-player .play-btn::after{content:'';display:block;width:0;height:0;border-left:22px solid #fff;border-top:14px solid transparent;border-bottom:14px solid transparent;margin-left:6px}
-.video-player.playing .poster,.video-player.playing .play-btn{display:none}
+.preview-image{position:relative;border-radius:16px;overflow:hidden;background:#000;border:1px solid var(--border);aspect-ratio:16/9;box-shadow:0 30px 80px -40px rgba(108,92,231,.4)}
+.preview-image img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .8s ease}
+.preview-image:hover img{transform:scale(1.03)}
+.preview-image::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 40%,rgba(108,92,231,.15));pointer-events:none}
 .video-meta{display:flex;gap:1rem;margin-top:.75rem;color:var(--muted);font-size:.8rem}
 .video-meta span{display:inline-flex;align-items:center;gap:6px}
 .signup-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:2rem}
@@ -242,23 +239,17 @@ section{padding:6rem 2rem}
 .metric-num{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:900;color:var(--green);display:block;line-height:1.1}
 .metric-label{font-size:.7rem;color:var(--muted);margin-top:.2rem;display:block}
 
-/* Video testimonials */
-.testimonial.video-testimonial{padding:0;overflow:hidden}
-.testimonial.video-testimonial::before{display:none}
-.video-thumb{position:relative;aspect-ratio:16/9;background:#000;cursor:pointer;overflow:hidden}
-.video-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
-.video-thumb:hover img{transform:scale(1.05)}
-.video-thumb .play-overlay{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:rgba(108,92,231,.95);display:flex;align-items:center;justify-content:center;box-shadow:0 0 30px rgba(108,92,231,.6)}
-.video-thumb .play-overlay::after{content:'';display:block;width:0;height:0;border-left:18px solid #fff;border-top:11px solid transparent;border-bottom:11px solid transparent;margin-left:5px}
-.video-testimonial-body{padding:1.5rem 2rem 2rem}
-.video-testimonial-body .testimonial-text{padding-top:0;font-size:.85rem}
-
-/* Video modal */
-.video-modal{position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:10000;display:flex;align-items:center;justify-content:center;padding:2rem;animation:fadeIn .25s ease}
-.video-modal-content{position:relative;width:100%;max-width:900px;aspect-ratio:16/9;background:#000;border-radius:16px;overflow:hidden}
-.video-modal-content video{width:100%;height:100%}
-.video-modal-close{position:absolute;top:-44px;right:0;background:none;border:none;color:#fff;font-size:2rem;cursor:pointer;line-height:1;padding:0 .5rem}
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+/* Featured testimonials with photo */
+.featured-testimonials{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2rem;margin-bottom:1.5rem}
+.featured-testimonial{display:grid;grid-template-columns:140px 1fr;gap:1.5rem;background:var(--card);border:1px solid var(--border);border-radius:20px;padding:1.75rem;align-items:center;transition:all .3s}
+.featured-testimonial:hover{border-color:rgba(162,155,254,.3);transform:translateY(-2px)}
+.featured-photo{width:140px;height:140px;border-radius:16px;overflow:hidden;border:1px solid var(--border);position:relative}
+.featured-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.featured-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 50%,rgba(108,92,231,.12));pointer-events:none}
+.featured-body .testimonial-stars{margin-bottom:.65rem}
+.featured-text{font-size:.88rem;color:var(--text);line-height:1.6;margin-bottom:1rem;font-style:italic}
+.featured-author .testimonial-name{font-size:.95rem;font-weight:700}
+.featured-author .testimonial-role{font-size:.78rem;color:var(--muted);margin-top:.15rem}
 
 /* Module details */
 .module-stats{display:flex;gap:1.25rem;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.78rem;color:var(--muted)}
@@ -300,6 +291,7 @@ footer a:hover{color:var(--accent)}
 
 @media(max-width:900px){
 .free-lesson-grid{grid-template-columns:1fr}
+.featured-testimonials{grid-template-columns:1fr}
 .case-card{grid-template-columns:1fr;text-align:left}
 .case-photo{width:80px;height:80px}
 .case-row{grid-template-columns:1fr}

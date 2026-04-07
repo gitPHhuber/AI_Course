@@ -1,6 +1,6 @@
 const cases = [
   {
-    photo: 'https://randomuser.me/api/portraits/women/44.jpg',
+    photo: '/images/case-anna.jpg',
     name: 'Анна Лебедева',
     role: 'Копирайтер · Москва',
     before: 'Делала 12–15 текстов в неделю вручную, выгорала к четвергу. Доход уперся в 80 000 ₽.',
@@ -12,7 +12,7 @@ const cases = [
     ],
   },
   {
-    photo: 'https://randomuser.me/api/portraits/men/32.jpg',
+    photo: '/images/case-mikhail.jpg',
     name: 'Михаил Соколов',
     role: 'Маркетинговое агентство · Екатеринбург',
     before: 'Команда 6 человек, маржа 20%, постоянные дедлайны. Контент-команда не справлялась с потоком клиентов.',
@@ -24,7 +24,7 @@ const cases = [
     ],
   },
   {
-    photo: 'https://randomuser.me/api/portraits/women/68.jpg',
+    photo: '/images/case-olga.jpg',
     name: 'Ольга Никитина',
     role: 'Product Manager · SaaS, СПб',
     before: 'Тратила 20 часов в неделю на сбор обратной связи, ресерч конкурентов и отчёты для стейкхолдеров.',
@@ -36,7 +36,7 @@ const cases = [
     ],
   },
   {
-    photo: 'https://randomuser.me/api/portraits/men/85.jpg',
+    photo: '/images/case-dmitry.jpg',
     name: 'Дмитрий Орлов',
     role: 'Интернет-магазин · Новосибирск',
     before: '4 000 товарных карточек без описаний, обновление вручную растянулось бы на 3 месяца. SEO просело.',
