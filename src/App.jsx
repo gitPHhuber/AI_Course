@@ -2,8 +2,10 @@ import Hero from './components/Hero.jsx'
 import StatsBar from './components/StatsBar.jsx'
 import Problems from './components/Problems.jsx'
 import Audience from './components/Audience.jsx'
+import FreeLesson from './components/FreeLesson.jsx'
 import Program from './components/Program.jsx'
 import Results from './components/Results.jsx'
+import Cases from './components/Cases.jsx'
 import Pricing from './components/Pricing.jsx'
 import Compare from './components/Compare.jsx'
 import Bonuses from './components/Bonuses.jsx'
@@ -23,8 +25,10 @@ export default function App() {
       <StatsBar />
       <Problems />
       <Audience />
+      <FreeLesson />
       <Program />
       <Results />
+      <Cases />
       <Pricing />
       <Compare />
       <Bonuses />
