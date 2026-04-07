@@ -1,25 +1,23 @@
+import { FileText, Bot, RefreshCw, Users, CreditCard, Smartphone, Lock } from 'lucide-react'
+
 const mainBonuses = [
   {
-    icon: '📋',
-    bg: 'rgba(255,215,0,.1)',
+    Icon: FileText,
     title: 'Библиотека из 100+ промптов',
     text: 'Постоянно обновляемая база промптов для работы, контента, кода, дизайна, маркетинга и аналитики. Скопировал — использовал.',
   },
   {
-    icon: '🤖',
-    bg: 'rgba(108,92,231,.1)',
+    Icon: Bot,
     title: 'Telegram-бот «AI Помощник»',
     text: 'Доступ к нашему боту с готовыми сценариями: ресерч, генерация креативов, анализ документов — всё прямо в Telegram.',
   },
   {
-    icon: '📚',
-    bg: 'rgba(0,206,201,.1)',
+    Icon: RefreshCw,
     title: 'База знаний по обновлениям',
     text: 'Регулярные апдейты курса при выходе новых моделей и фич. GPT-5, Claude 4, новые возможности — разбираем сразу.',
   },
   {
-    icon: '💬',
-    bg: 'rgba(253,121,168,.1)',
+    Icon: Users,
     title: 'Закрытое коммьюнити',
     text: 'Чат выпускников: помощь с задачами, обмен находками, нетворкинг, совместные проекты. Активная поддержка авторов.',
   },
@@ -27,17 +25,17 @@ const mainBonuses = [
 
 const helperPack = [
   {
-    icon: '💳',
+    Icon: CreditCard,
     title: 'Зарубежные карты из РФ',
     text: 'Как выпустить виртуальную Visa/Mastercard и оплачивать ChatGPT, Claude, Midjourney без хлопот.',
   },
   {
-    icon: '📱',
+    Icon: Smartphone,
     title: 'Иностранные номера и eSIM',
     text: 'Подбор зарубежного номера для регистрации в сервисах. eSIM-варианты для путешественников.',
   },
   {
-    icon: '🔐',
+    Icon: Lock,
     title: 'Стабильный доступ к сервисам',
     text: 'Настройка надёжного подключения к зарубежным ИИ-платформам. Шифрование и приватность.',
   },
@@ -53,7 +51,9 @@ export default function Bonuses() {
           <div className="bonus-grid">
             {mainBonuses.map((b) => (
               <div className="bonus" key={b.title}>
-                <div className="bonus-icon" style={{ background: b.bg }}>{b.icon}</div>
+                <div className="bonus-icon">
+                  <b.Icon size={22} strokeWidth={1.5} />
+                </div>
                 <div>
                   <h4>{b.title}</h4>
                   <p>{b.text}</p>
@@ -78,7 +78,9 @@ export default function Bonuses() {
           <div className="helper-grid">
             {helperPack.map((h) => (
               <div className="helper-card" key={h.title}>
-                <div className="helper-icon">{h.icon}</div>
+                <div className="helper-icon">
+                  <h.Icon size={18} strokeWidth={1.5} />
+                </div>
                 <div>
                   <h5>{h.title}</h5>
                   <p>{h.text}</p>

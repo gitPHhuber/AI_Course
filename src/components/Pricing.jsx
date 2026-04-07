@@ -23,7 +23,7 @@ export default function Pricing() {
               <li className="locked">Модули 8–10: API и продукты</li>
               <li className="locked">Менторская сессия 1-на-1</li>
             </ul>
-            <a href="#" className="btn btn-outline">Начать обучение</a>
+            <a href="#free" className="btn btn-outline">Начать обучение</a>
           </div>
 
           <div className="plan plan-pro featured">
@@ -43,7 +43,7 @@ export default function Pricing() {
               <li className="locked">Модули 8–10: API и продукты</li>
               <li className="locked">Менторская сессия 1-на-1</li>
             </ul>
-            <a href="#" className="btn btn-primary">Выбрать Про</a>
+            <a href="#free" className="btn btn-primary">Выбрать Про</a>
           </div>
 
           <div className="plan plan-prof">
@@ -64,7 +64,7 @@ export default function Pricing() {
               <li><strong>Менторская сессия 1-на-1</strong> (60 мин)</li>
             </ul>
             <a
-              href="#"
+              href="#free"
               className="btn btn-primary"
               style={{ background: 'linear-gradient(135deg,var(--gold2),var(--gold))', color: '#000' }}
             >

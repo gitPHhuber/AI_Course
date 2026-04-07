@@ -1,6 +1,6 @@
 const authors = [
   {
-    photo: 'https://randomuser.me/api/portraits/men/45.jpg',
+    photo: '/images/author-ilya.jpg',
     name: 'Илья Костюков',
     role: 'CEO AI Мастер · Full-stack разработчик · ИИ-архитектор',
     bio: [
@@ -19,7 +19,7 @@ const authors = [
     ],
   },
   {
-    photo: 'https://randomuser.me/api/portraits/men/52.jpg',
+    photo: '/images/author-evgeny.jpg',
     name: 'Евгений Яровой',
     role: 'Предприниматель · Коммерческий директор',
     bio: [

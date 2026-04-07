@@ -6,14 +6,14 @@ const videoItems = [
     role: 'Основатель студии дизайна',
     poster: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80&auto=format&fit=crop',
     text: '«За месяц после курса автоматизировал генерацию мудбордов и брифов. Освободил два дня в неделю — занимаюсь стратегией, а не операционкой.»',
-    video: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
+    video: '/videos/testimonial-1.mp4',
   },
   {
     name: 'Марина Зайцева',
     role: 'HR-директор · ИТ-компания',
     poster: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800&q=80&auto=format&fit=crop',
     text: '«Подключили Claude к процессу скрининга резюме. Команда HR разгрузилась на 60%, мы успеваем закрывать вдвое больше вакансий.»',
-    video: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4',
+    video: '/videos/testimonial-2.mp4',
   },
 ]
 

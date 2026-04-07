@@ -1,7 +1,8 @@
 import { useState, useRef } from 'react'
+import { Clock, Film, Eye } from 'lucide-react'
 
 const POSTER = 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&q=80&auto=format&fit=crop'
-const VIDEO_SRC = 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4'
+const VIDEO_SRC = '/videos/lesson.mp4'
 
 export default function FreeLesson() {
   const [playing, setPlaying] = useState(false)
@@ -46,9 +47,9 @@ export default function FreeLesson() {
               />
             </div>
             <div className="video-meta">
-              <span>⏱ 14:32</span>
-              <span>🎬 Урок 3 из модуля 03</span>
-              <span>👁 Без регистрации</span>
+              <span><Clock size={14} strokeWidth={1.6} /> 14:32</span>
+              <span><Film size={14} strokeWidth={1.6} /> Урок 3 из модуля 03</span>
+              <span><Eye size={14} strokeWidth={1.6} /> Без регистрации</span>
             </div>
           </div>
 

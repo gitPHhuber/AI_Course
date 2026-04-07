@@ -1,3 +1,5 @@
+import { Film, Clock } from 'lucide-react'
+
 const modules = [
   {
     num: '01',
@@ -163,8 +165,8 @@ export default function Program() {
                 ))}
               </ul>
               <div className="module-stats">
-                <span>🎬 {m.lessons} уроков</span>
-                <span>⏱ {m.hours}</span>
+                <span><Film size={14} strokeWidth={1.6} /> {m.lessons} уроков</span>
+                <span><Clock size={14} strokeWidth={1.6} /> {m.hours}</span>
               </div>
               <span className={`tag ${m.tagClass}`} style={{ marginTop: '.85rem' }}>{m.tag}</span>
             </div>
